@@ -50,6 +50,8 @@ The system is designed to help teams answer three questions:
 
 CivicLens AI supports human decision-making rather than replacing municipal officers or emergency-response procedures.
 
+
+
 ## 3. What Makes CivicLens AI Different?
 
 ### Explainable prioritization
