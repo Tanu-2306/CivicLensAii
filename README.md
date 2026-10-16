@@ -218,9 +218,9 @@ The following values are from the current documented training run.
 
 | Candidate | MSE ↓ | MAE ↓ | RMSE ↓ | R² ↑ |
 |---|---:|---:|---:|---:|
-| NumPy Linear Regression | 452.9027 | 16.4779 h | 21.2815 h | -0.0061 |
-| Training median baseline | 472.1941 | **15.9583 h** | 21.7300 h | -0.0489 |
-| Random Forest comparison | 477.0889 | 16.9650 h | 21.8424 h | -0.0598 |
+| NumPy Linear Regression | 452.9027 | 16.4779 h | 21.2815 h | 0.0061 |
+| Training median baseline | 472.1941 | **15.9583 h** | 21.7300 h | 0.0489 |
+| Random Forest comparison | 477.0889 | 16.9650 h | 21.8424 h | 0.0598 |
 
 **What the results tell us**
 
