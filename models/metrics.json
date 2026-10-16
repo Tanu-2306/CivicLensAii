@@ -1,0 +1,154 @@
+{
+  "trained_at": "2026-10-16T05:10:36.444662+00:00",
+  "models": {
+    "incident_resolution": {
+      "name": "Incident resolution estimate",
+      "target": "resolution_hours",
+      "training_records": 7126,
+      "excluded_records": 0,
+      "excluded_reason": "Unresolved or invalid/non-positive target duration",
+      "evaluation": {
+        "Median baseline": {
+          "mae": 15.95,
+          "rmse": 21.667
+        },
+        "Random forest": {
+          "mae": 16.918,
+          "rmse": 21.738
+        }
+      },
+      "selected_model": "Median baseline",
+      "split": "chronological 80/20 holdout",
+      "features": [
+        "incident_type",
+        "severity",
+        "reported_by",
+        "zone",
+        "road_type",
+        "road_condition",
+        "pedestrian_activity",
+        "injuries",
+        "hour",
+        "weekday",
+        "month",
+        "population_density_per_km2",
+        "near_school",
+        "near_hospital"
+      ]
+    },
+    "complaint_resolution": {
+      "name": "Complaint resolution estimate",
+      "target": "days_to_resolution",
+      "training_records": 4562,
+      "excluded_records": 0,
+      "excluded_reason": "Unresolved or invalid/non-positive target duration",
+      "evaluation": {
+        "Median baseline": {
+          "mae": 3.277,
+          "rmse": 4.615
+        },
+        "Random forest": {
+          "mae": 3.397,
+          "rmse": 4.502
+        }
+      },
+      "selected_model": "Median baseline",
+      "split": "chronological 80/20 holdout",
+      "features": [
+        "category",
+        "priority_reported",
+        "zone",
+        "road_type",
+        "road_condition",
+        "pedestrian_activity",
+        "hour",
+        "weekday",
+        "month",
+        "population_density_per_km2",
+        "near_school",
+        "near_hospital"
+      ]
+    },
+    "complaint_category": {
+      "name": "Complaint category metadata diagnostic",
+      "target": "category",
+      "features": [
+        "priority_reported",
+        "zone",
+        "road_type",
+        "road_condition",
+        "pedestrian_activity",
+        "hour",
+        "weekday",
+        "month",
+        "population_density_per_km2",
+        "near_school",
+        "near_hospital"
+      ],
+      "limitation": "Metadata-only; no complaint text is supplied, so this is not language understanding.",
+      "training_records": 6400,
+      "test_records": 1600,
+      "split": "chronological 80/20 holdout",
+      "accuracy": 0.163,
+      "macro_f1": 0.162,
+      "labels": [
+        "Drainage",
+        "Lighting",
+        "Pedestrian safety",
+        "Road damage",
+        "Traffic",
+        "Waste"
+      ],
+      "confusion_matrix": [
+        [
+          46,
+          53,
+          44,
+          38,
+          53,
+          31
+        ],
+        [
+          35,
+          37,
+          50,
+          42,
+          51,
+          32
+        ],
+        [
+          47,
+          52,
+          44,
+          42,
+          70,
+          31
+        ],
+        [
+          36,
+          32,
+          45,
+          51,
+          56,
+          40
+        ],
+        [
+          43,
+          54,
+          52,
+          50,
+          52,
+          37
+        ],
+        [
+          44,
+          41,
+          48,
+          40,
+          51,
+          30
+        ]
+      ]
+    }
+  }
+}

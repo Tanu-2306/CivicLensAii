@@ -1,0 +1,141 @@
+{
+  "datasets": {
+    "locations": {
+      "records": 1000,
+      "columns": [
+        "location_id",
+        "zone",
+        "road_type",
+        "road_condition",
+        "population_density_per_km2",
+        "near_school",
+        "near_hospital",
+        "pedestrian_activity",
+        "latitude",
+        "longitude"
+      ],
+      "dtypes": {
+        "location_id": "object",
+        "zone": "object",
+        "road_type": "object",
+        "road_condition": "object",
+        "population_density_per_km2": "int64",
+        "near_school": "bool",
+        "near_hospital": "bool",
+        "pedestrian_activity": "object",
+        "latitude": "float64",
+        "longitude": "float64"
+      },
+      "missing_values": {
+        "location_id": 0,
+        "zone": 0,
+        "road_type": 0,
+        "road_condition": 0,
+        "population_density_per_km2": 0,
+        "near_school": 0,
+        "near_hospital": 0,
+        "pedestrian_activity": 0,
+        "latitude": 0,
+        "longitude": 0
+      },
+      "duplicate_record_ids": 0,
+      "location_ids": 1000
+    },
+    "incidents": {
+      "records": 10000,
+      "columns": [
+        "incident_id",
+        "location_id",
+        "timestamp",
+        "incident_type",
+        "severity",
+        "injuries",
+        "reported_by",
+        "resolved",
+        "resolution_hours"
+      ],
+      "dtypes": {
+        "incident_id": "object",
+        "location_id": "object",
+        "timestamp": "datetime64[ns]",
+        "incident_type": "object",
+        "severity": "object",
+        "injuries": "int64",
+        "reported_by": "object",
+        "resolved": "bool",
+        "resolution_hours": "float64"
+      },
+      "missing_values": {
+        "incident_id": 0,
+        "location_id": 0,
+        "timestamp": 0,
+        "incident_type": 0,
+        "severity": 0,
+        "injuries": 0,
+        "reported_by": 0,
+        "resolved": 0,
+        "resolution_hours": 0
+      },
+      "duplicate_record_ids": 0,
+      "location_ids": 1000
+    },
+    "complaints": {
+      "records": 8000,
+      "columns": [
+        "complaint_id",
+        "location_id",
+        "created_at",
+        "category",
+        "priority_reported",
+        "status",
+        "days_to_resolution"
+      ],
+      "dtypes": {
+        "complaint_id": "object",
+        "location_id": "object",
+        "created_at": "datetime64[ns]",
+        "category": "object",
+        "priority_reported": "object",
+        "status": "object",
+        "days_to_resolution": "float64"
+      },
+      "missing_values": {
+        "complaint_id": 0,
+        "location_id": 0,
+        "created_at": 0,
+        "category": 0,
+        "priority_reported": 0,
+        "status": 0,
+        "days_to_resolution": 0
+      },
+      "duplicate_record_ids": 0,
+      "location_ids": 1000
+    }
+  },
+  "join_validation": {
+    "key": "location_id",
+    "location_rows": 1000,
+    "unique_location_keys": 1000,
+    "incident_rows_before_join": 10000,
+    "incident_rows_after_many_to_one_join": 10000,
+    "all_incident_location_ids_known": true
+  },
+  "incident_resolution_training": {
+    "original_records": 10000,
+    "resolved_records": 7126,
+    "excluded_records": 2874,
+    "excluded_by_reason": {
+      "unresolved": 2874,
+      "resolved_invalid_or_non_positive_duration": 0,
+      "resolved_invalid_timestamp": 0
+    },
+    "usable_records": 7126,
+    "target_outlier_check": {
+      "method": "1.5 IQR fences; flagged, not dropped",
+      "lower_fence": -25.263,
+      "upper_fence": 84.238,
+      "flagged_records": 247
+    }
+  },
+  "note": "No valid positive resolved record was dropped as an outlier. Feature imputers, category vocabularies and scalers are fitted using the chronological training partition only."
+}

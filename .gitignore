@@ -1,0 +1,10 @@
+.venv/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+civiclens-local.sqlite3
+frontend/.env.local
+frontend/.env.*.local
