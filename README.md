@@ -1,3 +1,14 @@
+## Hackathon Submission
+**Team Name:** SyntaxError
+**Track:** Track 3
+### Team Members
+| Name | Registration Number |
+|---|---|
+| Naman Bothra | 24BCA7017 |
+| Tanniskka Bhandari | 24BCE7620 |
+
+
+
 # CivicLens AI
 ### Where Should We Fix First?
 
